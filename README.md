@@ -26,18 +26,18 @@ npx bun install
 npx bun dev
 ```
 
-## Write tests with Python
+## Write selenium code with Python
 
 ```sh
-poetry new healenium-test
-cd healenium-test
+poetry new healenium-test-python
+cd healenium-test-python
 poetry add selenium
 ```
 
 or 
 
 ```sh
-cd healenium-test
+cd healenium-test-python
 pooetry install
 ```
 
@@ -45,4 +45,17 @@ run tests
 
 ```sh
 poetry run python main.py
+```
+
+## Write selenium code with JavaScript
+
+```sh
+mkdir healenium-test-js
+cd healenium-test-js
+npm init -y
+npm install selenium-webdriver
+npm install --save-dev typescript @types/node
+npm install --save-dev @types/selenium-webdriver
+npx tsc --init
+sh -c 'mkdir -p "$(dirname "$0")" && touch "$0"' src/index.ts
 ```
