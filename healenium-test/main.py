@@ -4,14 +4,13 @@ from selenium.webdriver.common.by import By
 
 
 def main():
-    driver = webdriver.Chrome()
-
     node_url = "http://localhost:8085"
 
     options = webdriver.ChromeOptions()
     options.add_argument("--no-sandbox")
 
-    current_driver = webdriver.Remote(
+    # driver = webdriver.Chrome()
+    driver = webdriver.Remote(
         command_executor=node_url,
         options=options,
     )
