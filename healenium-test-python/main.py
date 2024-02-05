@@ -19,7 +19,13 @@ def main():
     print("Current session is {}".format(driver.session_id))
 
     # driver.get("http://localhost:5173")
+    # driver.get("http://localhost:8080")
+    driver.get("http://host.docker.internal:5173")
+    # driver.get("http://host.docker.internal:8080")
+    # driver.get("https://www.selenium.dev/")
+
     time.sleep(1)
+    print(driver.page_source)
     element = driver.find_element(By.ID, "counter_button")
     element.click()
     time.sleep(1)
