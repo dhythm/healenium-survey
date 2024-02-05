@@ -8,14 +8,17 @@ def main():
 
     options = webdriver.ChromeOptions()
     options.add_argument("--no-sandbox")
+    # options.add_argument("--disable-dev-shm-usage")
+    options.set_capability("browserName", "chrome")
 
     # driver = webdriver.Chrome()
     driver = webdriver.Remote(
         command_executor=node_url,
         options=options,
     )
+    print("Current session is {}".format(driver.session_id))
 
-    driver.get("http://localhost:5173")
+    # driver.get("http://localhost:5173")
     time.sleep(1)
     element = driver.find_element(By.ID, "counter_button")
     element.click()
