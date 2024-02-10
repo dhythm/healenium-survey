@@ -59,3 +59,11 @@ npm install --save-dev @types/selenium-webdriver
 npx tsc --init
 sh -c 'mkdir -p "$(dirname "$0")" && touch "$0"' src/index.ts
 ```
+
+## Troubleshooting
+
+### Selenium remote driver doesn't work
+
+It might be resolved by the following action if you'll meet with `KeyError: 'sessionId'`:
+
+- `Settings` > `General` > Check "Use Rosetta for x86/amd64 emulation on Apple Silicon"

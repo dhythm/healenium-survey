@@ -15,11 +15,17 @@ def test_example():
         command_executor=node_url,
         options=options,
     )
-
     driver.get("http://host.docker.internal:5173")
+
+    # driver = webdriver.Chrome()
+    # driver.get("http://localhost:5173")
+
+    # print(driver.page_source)
 
     time.sleep(1)
     element = driver.find_element(By.ID, "counter_button")
+    assert element.text == "count is 0"
     element.click()
+    assert element.text == "count is 1"
     time.sleep(1)
     driver.quit()
