@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-def main():
+def test_example():
     node_url = "http://localhost:8085"
 
     options = webdriver.ChromeOptions()
@@ -11,27 +11,15 @@ def main():
     # options.add_argument("--disable-dev-shm-usage")
     options.set_capability("browserName", "chrome")
 
-    # driver = webdriver.Chrome()
     driver = webdriver.Remote(
         command_executor=node_url,
         options=options,
     )
 
-    # driver.get("http://localhost:5173")
-    # driver.get("http://localhost:8080")
     driver.get("http://host.docker.internal:5173")
-    # driver.get("http://host.docker.internal:8080")
-    # driver.get("https://www.selenium.dev/")
 
     time.sleep(1)
     element = driver.find_element(By.ID, "counter_button")
     element.click()
     time.sleep(1)
     driver.quit()
-
-
-if __name__ == "__main__":
-    start = time.time()
-    main()
-    elapsed_time = time.time() - start
-    print("elapsed_time: {0:0.2f}".format(elapsed_time) + "[sec]")
