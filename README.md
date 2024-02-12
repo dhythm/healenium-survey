@@ -60,6 +60,11 @@ npx tsc --init
 sh -c 'mkdir -p "$(dirname "$0")" && touch "$0"' src/index.ts
 ```
 
+## The result of investigation
+
+It looks `healenium`'s core algorithm is concealed. (not in public reposition)
+Thus, I couldn't catch up how this library heal changed elements.
+
 ## Troubleshooting
 
 ### Selenium remote driver doesn't work
